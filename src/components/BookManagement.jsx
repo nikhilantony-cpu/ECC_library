@@ -90,7 +90,7 @@ export default function BookManagement({
                     />
                 </div>
 
-                <div style={{ display: 'flex', gap: '0.75rem', width: '100%', maxWidth: '380px' }}>
+                <div className="action-filters" style={{ display: 'flex', gap: '0.75rem', width: '100%', maxWidth: '380px' }}>
                     <select
                         className="form-control"
                         style={{ width: '45%' }}

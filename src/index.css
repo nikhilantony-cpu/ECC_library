@@ -220,8 +220,8 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding-bottom: 70px;
-  /* space for mobile nav */
+  padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+  /* space for mobile nav + safe area */
 }
 
 @media (min-width: 769px) {
@@ -251,7 +251,8 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: hsl(var(--bg-surface));
   border-top: 1px solid hsl(var(--border-color));
   display: flex;
@@ -295,7 +296,8 @@ body {
 
 @media (max-width: 768px) {
   .view-container {
-    padding: 1.25rem;
+    padding: 1rem;
+    /* slightly tighter on small viewports */
   }
 
   .sidebar {
@@ -303,7 +305,7 @@ body {
   }
 
   .top-bar {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
   }
 }
 
@@ -321,6 +323,13 @@ body {
   padding: 1.5rem;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+    /* reduce padding so components have more width space */
+  }
 }
 
 .card:hover {
@@ -349,7 +358,8 @@ body {
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
   font-family: var(--font-sans);
-  font-size: 0.95rem;
+  font-size: 1rem;
+  /* set to 16px to prevent iOS auto-zoom on input focus */
   transition: var(--transition);
   width: 100%;
 }
@@ -413,7 +423,6 @@ body {
   color: white;
 }
 
-/* Login Screen Glassmorphic Layout */
 .login-wrapper {
   min-height: 100vh;
   display: flex;
@@ -435,6 +444,16 @@ body {
   padding: 2.5rem 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--shadow-glow);
   animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 480px) {
+  .login-wrapper {
+    padding: 1rem;
+  }
+
+  .login-card {
+    padding: 2rem 1.25rem;
+  }
 }
 
 .login-header {
@@ -632,6 +651,21 @@ body {
   width: 100%;
 }
 
+@media (max-width: 640px) {
+  .search-box {
+    max-width: none;
+  }
+
+  .action-header button {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .action-filters {
+    max-width: none !important;
+  }
+}
+
 .search-box input {
   padding-left: 2.5rem;
 }
@@ -797,7 +831,6 @@ body {
   }
 }
 
-/* Toast Notification Card styling */
 .toast-container {
   position: fixed;
   top: 1.5rem;
@@ -809,6 +842,16 @@ body {
   pointer-events: none;
   max-width: 380px;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .toast-container {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+    width: auto;
+  }
 }
 
 .toast {
