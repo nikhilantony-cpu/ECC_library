@@ -316,7 +316,7 @@ export default function App() {
           <div className="page-title">
             <h2>{getHeaderTitle()}</h2>
           </div>
-          <div style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: '500' }}>
+          <div className="header-brand-label" style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: '500' }}>
             ECC UC College
           </div>
         </header>

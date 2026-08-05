@@ -245,6 +245,18 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 480px) {
+  .page-title h2 {
+    font-size: 1.05rem;
+    /* reduce title size to avoid wrapping */
+  }
+
+  .header-brand-label {
+    display: none;
+    /* hide college brand to give title full horizontal space */
+  }
+}
+
 /* Mobile Sticky Bottom-Nav */
 .mobile-nav {
   position: fixed;
