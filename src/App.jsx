@@ -316,8 +316,17 @@ export default function App() {
           <div className="page-title">
             <h2>{getHeaderTitle()}</h2>
           </div>
-          <div className="header-brand-label" style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: '500' }}>
-            ECC UC College
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div className="header-brand-label" style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: '500' }}>
+              ECC UC College
+            </div>
+            <button
+              className="btn btn-secondary header-logout-btn"
+              style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
+              onClick={handleLogout}
+            >
+              🚪 Logout
+            </button>
           </div>
         </header>
 

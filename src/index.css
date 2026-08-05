@@ -240,6 +240,13 @@ body {
   padding: 0 2rem;
 }
 
+@media (min-width: 769px) {
+  .header-logout-btn {
+    display: none !important;
+    /* hide button on desktop where sidebar logout is available */
+  }
+}
+
 .page-title h2 {
   font-size: 1.25rem;
   font-weight: 700;
